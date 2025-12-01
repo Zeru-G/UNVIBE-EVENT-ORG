@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UniVibe Events & Solutions | Campus Innovation Summit 2025</title>
+  <link rel="stylesheet" href="univibe.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">UniVibe<span>.</span></div>
+      <button class="hamburger" id="hamburger">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#tickets">Tickets</a></li>
+        <li><a href="#booking">Book Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Campus Innovation Summit 2025</h1>
+      <p class="subtitle">Organized by <strong>UniVibe Events & Solutions</strong></p>
+      <div class="event-info">
+        <span>📅 Sat, Dec 20, 2025</span>
+        <span>📍  Addis Ababa Convention Center</span>
+        <span>🎓 Open to Students & Faculty</span>
+      </div>
+      <a href="#booking" class="btn btn-primary hero-btn">🎟️ Reserve Your Seat</a>
+    </div>
+  </section>
+
+  <!-- Ticket Options -->
+  <section id="tickets" class="tickets-section">
+    <div class="container">
+      <h2 class="section-title">Campus Access Passes</h2>
+      <h1 class="section-subtitle">Choose the experience that fits you. All passes include full event access.</h1>
+      
+      <div class="tickets-grid">
+        <!-- Student Pass -->
+        <div class="ticket-card">
+          <h3>🎟️ Regular</h3>
+          <p class="price">150 <span>ETB</span></p>
+          <ul class="features">
+            <li>General Seating (Student Zone)</li>
+            <li>Student Networking Session</li>
+            <li>Digital Certificate of Attendance</li>
+          </ul>
+          <button class="btn btn-outline" data-ticket="regular" data-price="150">Get Student Pass</button>
+        </div>
+        
+        <!-- Faculty Pass -->
+        <div class="ticket-card featured">
+          <div class="badge">Most Popular</div>
+          <h3>🌟 VIP</h3>
+          <p class="price">300 <span>ETB</span></p>
+          <ul class="features">
+            <li>Premium Seating (Front Section)</li>
+            <li>Exclusive Q&A with Speakers</li>
+            <li>Access to Faculty Lounge</li>
+          </ul>
+          <button class="btn btn-primary" data-ticket="vip" data-price="300">Get Faculty Pass</button>
+        </div>
+        
+        <!-- VIP Pass -->
+        <div class="ticket-card">
+          <h3>👑 VVIP</h3>
+          <p class="price">500 <span>ETB</span></p>
+          <ul class="features">
+            <li>Reserved Premium Table</li>
+            <li>Meet Speakers & Industry Leaders</li>
+            <li>Commemorative Program & Gift</li>
+          </ul>
+          <button class="btn btn-outline" data-ticket="vvip" data-price="500">Get VIP Pass</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Section -->
+  <section id="booking" class="booking-section">
+    <div class="container">
+      <div class="booking-container">
+        <div class="booking-card">
+          <div class="booking-header">
+            <h2>Secure Your Spot</h2>
+          </div>
+          
+          <!-- Booking Form -->
+          <form id="bookingForm" class="booking-form">
+            <div class="form-group">
+              <label for="fullName">Full Name </label>
+              <input type="text" id="fullName" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone (for SMS updates) </label>
+              <input type="tel" id="phone" required placeholder="+251..." />
+            </div>
+            <div class="form-group">
+              <label for="email">University Email </label>
+              <input type="email" id="email" required />
+            </div>
+            <div class="form-group">
+              <label for="ticketType">Ticket Type </label>
+             <select id="ticketType" required>
+              <option value="">— Select —</option>
+              <option value="regular">🎟️ Regular — 150 ETB</option>
+              <option value="vip">🌟 VIP — 300 ETB</option>
+              <option value="vvip">👑 VVIP — 500 ETB</option>
+            </select>
+            </div>
+            <div class="form-group">
+              <label for="quantity">Quantity *</label>
+              <input type="number" id="quantity" min="1" max="10" value="1" required />
+            </div>
+            <div class="summary">
+              <p>Total: <span id="totalPrice">150</span> ETB</p>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Proceed to Payment</button>
+          </form>
+
+          <!-- Payment Section -->
+          <div id="paymentSection" class="payment-section hidden">
+            <!-- ✅ RESTORED: Animated Payment Header -->
+            <div class="payment-header">
+              <div class="payment-header-content">
+                <h3><span class="payment-icon">💳</span> Complete Your Payment</h3>
+                <p>Please scan the QR code or use the account details below.</p>
+              </div>
+            </div>
+
+            <div class="payment-methods">
+              <!-- ✅ RESTORED: Telebirr with Logo & Real QR -->
+              <div class="payment-option">
+                <img src="telebirr Logo.png" alt="TeleBirr" class="payment-logo">
+                <div class="account-info">
+                  <p class="account-label">📱 TeleBirr Number</p>
+                  <div class="account-number">
+                    <span id="telebirrNumber">0912345678</span>
+                    <button class="copy-btn" data-target="telebirrNumber">📋 Copy</button>
+                  </div>
+                  <p class="account-bank-name">Account Name: <strong>UniVibe Events & Solutions</strong></p>
+                </div>
+                <img src="TELLE.jpg" alt="TeleBirr QR Code" class="qr-code">
+                <button class="scan-btn" data-method="TeleBirr">✓ I’ve Scanned & Paid</button>
+              </div>
+
+              <!-- ✅ RESTORED: CBE with Logo & Real QR -->
+              <div class="payment-option">
+                <img src="cbe1.png" alt="CBE Birr" class="payment-logo">
+                <div class="account-info">
+                  <p class="account-label">🏦 CBE Account</p>
+                  <div class="account-number">
+                    <span id="cbeNumber">1000123456789</span>
+                    <button class="copy-btn" data-target="cbeNumber">📋 Copy</button>
+                  </div>
+                  <p class="account-bank-name">Account Name: <strong>UniVibe Events & Solutions</strong></p>
+                </div>
+                <img src="CBE.jpg" alt="CBE Birr QR Code" class="qr-code">
+                <button class="scan-btn" data-method="CBE">✓ I’ve Scanned & Paid</button>
+              </div>
+            </div>
+
+            <p class="note" style="font-size:0.9rem; margin-top:1.5rem;">
+              🔒 Payments are verified automatically. Confirmation SMS sent within 5 minutes.
+            </p>
+          </div>
+
+          <!-- ✅ RESTORED: Loading Overlay (5s) -->
+          <div id="loadingOverlay" class="loading-overlay">
+            <div class="loading-content">
+              <div class="spinner"></div>
+              <h3 class="loading-title">Checking payment…</h3>
+              <p class="loading-subtitle">Verifying transaction with bank. Please wait.</p>
+              <div class="loading-bar">
+                <div class="loading-progress" id="loadingProgress"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Confirmation Section -->
+          <div id="confirmationSection" class="confirmation-section hidden">
+            <div class="confirmation-card">
+              <div class="checkmark">✓</div>
+              <h3>Booking Confirmed!</h3>
+              <p>Thank you for choosing UniVibe Events & Solutions.</p>
+              <div class="booking-details">
+                <p><strong>Name:</strong> <span id="confName"></span></p>
+                <p><strong>Phone:</strong> <span id="confPhone"></span></p>
+                <p><strong>Email:</strong> <span id="confEmail"></span></p>
+                <p><strong>Ticket:</strong> <span id="confTicket"></span></p>
+                <p><strong>Quantity:</strong> <span id="confQty"></span></p>
+                <p><strong>Total Paid:</strong> <span id="confTotal"></span> ETB</p>
+              </div>
+              <p class="note">
+                📩 A confirmation SMS/email will be sent shortly.  
+                Bring your ID and booking reference on event day.
+              </p>
+              <button id="newBookingBtn" class="btn btn-outline">Book Another Ticket</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">UniVibe<span>.</span></div>
+      <p>&copy; 2025 UniVibe Events & Solutions. All rights reserved.</p>
+      <p>Contact: info@univibe.et | +251 912345678</p>
+    </div>
+  </footer>
+
+  <!-- ✅ RESTORED: Copy Toast -->
+  <div id="copyToast" class="copy-toast">📋 Copied to clipboard!</div>
+
+  <script src="univibe.js"></script>
+</body>
+</html>
