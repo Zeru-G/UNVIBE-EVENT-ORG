@@ -30,8 +30,8 @@ ul { list-style: none; }
 :root {
   --primary: #1a365d;
   --primary-dark: #0f2444;
-  --accent: #d97706;
-  --accent-light: #f59e0b;
+  --accent: #0ee857;
+  --accent-light: #0ee857;
   --light: #f8fafc;
   --card-bg: #ffffff;
   --text: #1e293b;
@@ -564,4 +564,5 @@ ul { list-style: none; }
   .qr-code { width: 130px; height: 130px; }
   .loading-content { padding: 2rem; border-radius: 20px; }
   .loading-title { font-size: 1.6rem; }
+
 }
