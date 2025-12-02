@@ -143,9 +143,9 @@ document.addEventListener('click', function(e) {
     overlay?.classList.remove('active');
 
     const ticketNames = { 
-      regular: '🎓 Student Pass', 
-      vip: '👔 Faculty & Staff', 
-      vvip: '🌟 VIP Experience' 
+      regular: '🎟️ Regular', 
+      vip: '🌟 VIP — 300 ETB', 
+      vvip: '👑 VVIP — 500 ETB' 
     };
     const priceMap = { regular: 150, vip: 300, vvip: 500 };
     const total = booking.quantity * priceMap[booking.ticket];
@@ -184,4 +184,5 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       navMenu?.classList.remove('active');
     }
   });
+
 });
